@@ -1,0 +1,8 @@
+package com.lzp.eshop.inventory.dao;
+
+public interface RedisDAO {
+
+    public void set(String key,String value);
+
+    public String get(String key);
+}
