@@ -2,7 +2,7 @@ package com.lzp.eshop.inventory.vo;
 
 /**
  * 请求的响应
- * @author Administrator
+ * @author lzp
  *
  */
 public class Response {
