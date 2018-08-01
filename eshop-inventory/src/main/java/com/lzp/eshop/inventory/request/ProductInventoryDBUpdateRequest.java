@@ -7,6 +7,8 @@ import com.lzp.eshop.inventory.service.ProductInventoryService;
  * 商品库存 更新请求
  *      删除缓存
  *      更新数据库
+ *
+ *  @author lzp
  */
 public class ProductInventoryDBUpdateRequest implements Request  {
 
@@ -31,5 +33,10 @@ public class ProductInventoryDBUpdateRequest implements Request  {
         productInventoryService.removeProductInventoryCache(productInventory);
         // 修改数据库中的库存
         productInventoryService.updateProductInventory(productInventory);
+    }
+
+    @Override
+    public Integer getProductId() {
+        return productInventory.getProductId();
     }
 }

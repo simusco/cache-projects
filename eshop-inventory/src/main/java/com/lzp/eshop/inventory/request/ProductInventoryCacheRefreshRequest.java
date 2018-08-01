@@ -6,7 +6,7 @@ import com.lzp.eshop.inventory.service.ProductInventoryService;
 /**
  * 商品库存读请求
  * 		重新加载商品库存的缓存
- * @author Administrator
+ * @author lzp
  *
  */
 public class ProductInventoryCacheRefreshRequest implements Request {
@@ -32,6 +32,11 @@ public class ProductInventoryCacheRefreshRequest implements Request {
 		ProductInventory productInventory = productInventoryService.findProductInventory(productId);
 		// 将最新的商品库存数量，刷新到redis缓存中去
 		productInventoryService.setProductInventoryCache(productInventory); 
+	}
+
+	@Override
+	public Integer getProductId() {
+		return productId;
 	}
 	
 }

@@ -4,7 +4,7 @@ import com.lzp.eshop.inventory.model.ProductInventory;
 
 /**
  * 商品库存Service接口
- * @author Administrator
+ * @author lzp
  *
  */
 public interface ProductInventoryService {
@@ -33,5 +33,11 @@ public interface ProductInventoryService {
 	 * @param productInventory 商品库存
 	 */
 	void setProductInventoryCache(ProductInventory productInventory);
-	
+
+	/**
+	 * 获取商品库存的缓存
+	 * @param productId
+	 * @return
+	 */
+	ProductInventory getProductInventoryCache(Integer productId);
 }
