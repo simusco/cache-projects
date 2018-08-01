@@ -1,4 +1,6 @@
 package com.lzp.eshop.inventory.request;
 
-public class Request {
+public interface Request {
+
+    void process();
 }
