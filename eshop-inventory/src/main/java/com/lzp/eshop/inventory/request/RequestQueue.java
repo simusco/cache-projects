@@ -2,7 +2,9 @@ package com.lzp.eshop.inventory.request;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 请求内存队列
@@ -11,7 +13,15 @@ import java.util.concurrent.ArrayBlockingQueue;
  */
 public class RequestQueue {
 
+    /**
+     * 内存队列
+     */
     private List<ArrayBlockingQueue<Request>> queues = new ArrayList<ArrayBlockingQueue<Request>>();
+
+    /**
+     * 标识位map
+     */
+    private Map<Integer, Boolean> flagMap = new ConcurrentHashMap<Integer, Boolean>();
 
     public static class Singleton {
         private static RequestQueue instance;
@@ -57,5 +67,13 @@ public class RequestQueue {
      */
     public ArrayBlockingQueue<Request> getQueue(int index) {
         return queues.get(index);
+    }
+
+    /**
+     * 获取标识位map
+     * @return
+     */
+    public Map<Integer, Boolean> getFlagMap() {
+        return flagMap;
     }
 }
