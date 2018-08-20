@@ -22,5 +22,6 @@
 
     <modules>
         <module>eshop-inventory</module>
+        <module>eshop-cache</module>
     </modules>
 </project>
